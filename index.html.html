@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Universe 💫</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at bottom, #05051f 0%, #000000 80%);
+  font-family: 'Georgia', serif;
+  color: white;
+}
+
+#universe {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* 🌌 Stars */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: drift linear infinite;
+}
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3000px); }
+}
+
+/* 🤍🌹 Roses */
+.rose {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.2;
+  filter: blur(0.3px);
+  animation: floatRose linear infinite;
+}
+
+@keyframes floatRose {
+  from { transform: translateY(120vh) rotate(0deg); }
+  to { transform: translateY(-140vh) rotate(360deg); }
+}
+
+/* 💫 Messages */
+.message {
+  position: absolute;
+  max-width: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.9;
+  opacity: 0;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255,255,255,0.25);
+  animation: fadeMessage 38s ease-in-out forwards;
+}
+
+@keyframes fadeMessage {
+  0% { opacity: 0; transform: translate(-50%, 40px); }
+  20% { opacity: 1; transform: translate(-50%, 0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -40px); }
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 18px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.45;
+  letter-spacing: 1px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="universe"></div>
+<div class="footer">For my Universe — always 💫🤍🌹</div>
+
+<script>
+const universe = document.getElementById("universe");
+
+/* ⭐ Stars */
+for (let i = 0; i < 180; i++) {
+  const star = document.createElement("div");
+  star.className = "star";
+  const size = Math.random() * 2 + 1;
+  star.style.width = size + "px";
+  star.style.height = size + "px";
+  star.style.left = Math.random() * 100 + "%";
+  star.style.top = Math.random() * 250 + "%";
+  star.style.animationDuration = 90 + Math.random() * 140 + "s";
+  universe.appendChild(star);
+}
+
+/* 🤍🌹 Roses */
+for (let i = 0; i < 14; i++) {
+  const rose = document.createElement("div");
+  rose.className = "rose";
+  rose.innerText = "🤍🌹";
+  rose.style.left = Math.random() * 100 + "%";
+  rose.style.animationDuration = 70 + Math.random() * 70 + "s";
+  universe.appendChild(rose);
+}
+
+/* 💫 Messages */
+const messages = [
+  "You don’t need to do anything here. This place exists for you, my Universe 💫",
+  "I love you quietly so it never runs out 💫",
+  "Sweetu, you are safe here 💫",
+  "My Love, rest… I’m holding this moment 💫",
+  "Even galaxies slow down for you 💫",
+  "White roses bloom gently — just like you 🤍🌹💫",
+  "You are not behind, you are exactly here 💫",
+  "My Universe, you are deeply cherished 💫",
+  "Your softness is your power 💫",
+  "You don’t need to earn love — you already have mine 💫",
+  "I choose you even on ordinary days 💫",
+  "Even silence feels safe with you 💫",
+  "You are not too much 💫",
+  "I love you without urgency 💫",
+  "This universe feels right because of you 💫",
+  "You don’t disappear when you’re quiet 💫",
+  "I’ll wait as long as you need 💫",
+  "Some loves rush, mine stays 💫",
+  "You are allowed to pause 💫",
+  "I love how gently you exist 💫",
+  "Even stars envy your calm 💫",
+  "You don’t have to explain your heart to me 💫",
+  "You are loved even on heavy days 💫",
+  "This place will still be here when you return 💫",
+  "I love you endlessly 💫",
+  "You don’t need to fix anything 💫",
+  "Your presence alone is enough 💫",
+  "My Universe, I’m not going anywhere 💫",
+  "This place keeps loving you 💫",
+  "I hope this place feels like a deep breath, my Universe 💫",
+  "Sweet, you don’t have to be okay to be loved 💫",
+  "Even the quiet parts of you are precious to me 💫",
+  "You are safe to exist softly here 💫",
+  "White roses bloom where love is patient 🤍🌹💫",
+  "Sweetu, I see you even when you don’t say a word 💫",
+  "The universe feels gentler when you’re at peace 💫",
+  "You don’t need to rush your healing, Cutipie 💫",
+  "My Universe, you are allowed to rest without explaining 💫",
+  "I love you in the slow moments 💫",
+  "Even tired days are beautiful when they’re yours 💫",
+  "Sweetheart, you are held more than you know 💫",
+  "White roses don’t ask for attention — they just bloom 🤍🌹💫",
+  "You are safe from expectations here 💫",
+  "My Universe, your presence is enough 💫",
+  "I love how your heart moves gently 💫",
+  "Sweetu, nothing about you is a burden 💫",
+  "The cosmos listens when you breathe 💫",
+  "You don’t need permission to slow down 💫",
+  "White roses remind me to love quietly 🤍🌹💫",
+  "Cutipie, you are cherished even in silence 💫",
+  "My Universe, you don’t have to perform today 💫",
+  "I’m proud of how softly you exist 💫",
+  "You are not late — you are right on time 💫",
+  "Sweetadu, you are deeply safe here 💫",
+  "The night feels calmer knowing you’re in it 💫",
+  "You don’t need to carry everything alone 💫",
+  "White roses grow even after long winters 🤍🌹💫",
+  "My Universe, I’ll wait without counting the time 💫",
+  "I love you without asking you to change 💫",
+  "Sweetu, your feelings are welcome here 💫",
+  "The universe doesn’t rush you — neither do I 💫",
+  "You are loved in ways that don’t make noise 💫",
+  "White roses bloom slowly, and so does trust 🤍🌹💫",
+  "Cutipie, you are not invisible to me 💫",
+  "My Universe, even your pauses matter 💫",
+  "I love you in all your gentle moods 💫",
+  "You don’t owe strength to anyone today 💫",
+  "White roses carry love without words 🤍🌹💫",
+  "Sweetadu, you are deeply chosen 💫",
+  "The stars feel quieter when you smile 💫",
+  "You are allowed to feel everything 💫",
+  "My Universe, you don’t need fixing 💫",
+  "I love you — not urgently, but endlessly 💫",
+  "White roses remind me to stay patient 🤍🌹💫",
+  "Cutipie, you are safe to be soft 💫",
+  "My Universe, I’m here even when nothing is said 💫",
+  "You don’t need to shine to be special 💫",
+  "Sweetu, you are loved beyond explanation 💫",
+  "The universe fits gently around your heart 💫",
+  "White roses bloom where love stays 🤍🌹💫",
+  "You are held — quietly, steadily 💫",
+  "My Universe, I choose you again 💫",
+  "I love you in the calm after the storm 💫",
+  "Sweetadu, you don’t have to carry today alone 💫"
+];
+
+/* ✨ Message Loop */
+function showMessage() {
+  const msg = document.createElement("div");
+  msg.className = "message";
+  msg.style.top = 20 + Math.random() * 40 + "%";
+  msg.innerText = messages[Math.floor(Math.random() * messages.length)];
+  universe.appendChild(msg);
+  setTimeout(() => universe.removeChild(msg), 38000);
+}
+
+const hour = new Date().getHours();
+const interval = hour >= 22 || hour <= 6 ? 55000 : 38000;
+
+setInterval(showMessage, interval);
+showMessage();
+
+/* 🌠 Rare Secret */
+setInterval(() => {
+  if (Math.random() < 0.15) {
+    const secret = document.createElement("div");
+    secret.className = "message";
+    secret.style.top = "50%";
+    secret.innerText = "This universe was made by someone who loves you endlessly, Yours Sweetadu 💫";
+    universe.appendChild(secret);
+    setTimeout(() => universe.removeChild(secret), 38000);
+  }
+}, 160000);
+</script>
+
+</body>
+</html>
